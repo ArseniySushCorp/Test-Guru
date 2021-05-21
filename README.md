@@ -26,6 +26,8 @@ Entities:
 
 - Admin - user who can create tests
 - User - user who pass tests
-- Test - set of questions
 - Questions - sentence worded or expressed so as to elicit information
 - Answers - solution for questions
+- Test - set of questions
+- TestCategory - define the topic of tests
+- Results - output of resolved test
