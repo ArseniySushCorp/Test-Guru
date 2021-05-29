@@ -1,4 +1,4 @@
 class Test < ApplicationRecord
   belongs_to :category
-  belongs_to :author
+  belongs_to :author, class_name: 'User'
 end
