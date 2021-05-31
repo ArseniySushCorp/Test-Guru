@@ -10,6 +10,9 @@ category = Category.create([
 
 tests = Test.create([
   { title: "Seed test - 1", level: 0, category_id: category.first.id, author_id: users.first.id },
+  { title: "Seed test - 2", level: 1, category_id: category.first.id, author_id: users.first.id },
+
+  { title: "Seed test - 1", level: 0, category_id: category.last.id, author_id: users.last.id },
   { title: "Seed test - 2", level: 1, category_id: category.last.id, author_id: users.last.id }
 ])
 
