@@ -9,41 +9,41 @@ category = Category.create!([
 ])
 
 tests = Test.create!([
-  { title: "Seed test - 1", level: 0, category_id: category.first.id, author_id: users.first.id },
-  { title: "Seed test - 2", level: 1, category_id: category.first.id, author_id: users.first.id },
+  { title: "Seed test - 1", level: 0, category: category.first, author: users.first },
+  { title: "Seed test - 2", level: 1, category: category.first, author: users.first },
 
-  { title: "Seed test - 1", level: 0, category_id: category.last.id, author_id: users.last.id },
-  { title: "Seed test - 2", level: 1, category_id: category.last.id, author_id: users.last.id }
+  { title: "Seed test - 3", level: 0, category: category.last, author: users.last },
+  { title: "Seed test - 4", level: 1, category: category.last, author: users.last }
 ])
 
 passed_tests = PassedTest.create!([
-  { test_id: tests.first.id, user_id: users.first.id },
-  { test_id: tests[1].id, user_id: users.first.id },
-  { test_id: tests[2].id, user_id: users.first.id },
+  { test: tests.first, user: users.first },
+  { test: tests[1], user: users.first },
+  { test: tests[2], user: users.first },
 ])
 
 questions = Question.create!([
-  { text: "Seed question - 1 first test", test_id: tests.first.id },
-  { text: "Seed question - 2 first test", test_id: tests.first.id },
-  { text: "Seed question - 3 first test", test_id: tests.first.id },
-  { text: "Seed question - 4 first test", test_id: tests.first.id },
+  { text: "Seed question - 1 first test", test: tests.first },
+  { text: "Seed question - 2 first test", test: tests.first },
+  { text: "Seed question - 3 first test", test: tests.first },
+  { text: "Seed question - 4 first test", test: tests.first },
 
-  { text: "Seed question - 1 second test", test_id: tests.last.id },
-  { text: "Seed question - 2 second test", test_id: tests.last.id },
-  { text: "Seed question - 3 second test", test_id: tests.last.id },
-  { text: "Seed question - 4 second test", test_id: tests.last.id },
+  { text: "Seed question - 1 second test", test: tests.last },
+  { text: "Seed question - 2 second test", test: tests.last },
+  { text: "Seed question - 3 second test", test: tests.last },
+  { text: "Seed question - 4 second test", test: tests.last },
 ])
 
 answer = Answer.create!([
-  { text: "Seed answer 1 first question first test", correct: true,  question_id: questions.first.id },
-  { text: "Seed answer 2 first question first test", correct: false, question_id: questions.first.id },
+  { text: "Seed answer 1 first question first test", correct: true,  question: questions.first },
+  { text: "Seed answer 2 first question first test", correct: false, question: questions.first },
 
-  { text: "Seed answer 1 second question first test", correct: true, question_id: questions[1].id },
-  { text: "Seed answer 2 second question first test", correct: false, question_id: questions[1].id },
+  { text: "Seed answer 1 second question first test", correct: true, question: questions[1] },
+  { text: "Seed answer 2 second question first test", correct: false, question: questions[1] },
 
-  { text: "Seed answer 1 first question second test", correct: true, question_id: questions[4].id },
-  { text: "Seed answer 2 frist question second test", correct: false, question_id: questions[4].id },
+  { text: "Seed answer 1 first question second test", correct: true, question: questions[4] },
+  { text: "Seed answer 2 frist question second test", correct: false, question: questions[4] },
 
-  { text: "Seed answer 1 second question second test", correct: true, question_id: questions[5].id },
-  { text: "Seed answer 2 second question second test", correct: false, question_id: questions[5].id },
+  { text: "Seed answer 1 second question second test", correct: true, question: questions[5] },
+  { text: "Seed answer 2 second question second test", correct: false, question: questions[5] },
 ])
