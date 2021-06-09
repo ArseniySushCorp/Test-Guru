@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>
+    <div class="row">
+      <div class="col s8">
+        <%=@test.title %> questions:
+      </div>
+
+      <div class="col s4">
+        <a href=<%= new_test_question_path %> class="btn-floating btn-large waves-effect waves-light">
+          <i class="material-icons">add</i>
+        </a>
+      </div>
+    </div>
+  </h1>
+
+  <div class="collection">
+    <% @questions.each do |question| %>
+    <a href=<%=question_path(question.id) %> class="collection-item">
+      <%= question.text %>
+    </a>
+    <% end %>
+  </div>
+</div>
