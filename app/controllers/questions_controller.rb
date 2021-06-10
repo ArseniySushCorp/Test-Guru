@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = @test.questions.new(text: params.require(:question_text))
+    @question = @test.questions.new(params.require(:question).permit(:text))
 
     if @question.save
       render plain: "Qustion ##{@question.id} created"

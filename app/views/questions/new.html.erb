@@ -2,10 +2,10 @@
   <h3>Create new question for Test #<%= @test.id %></h3>
   <div class="row">
     <div class="row" style="margin-top: 20px;">
-      <%= form_with url: test_questions_path, method: :post, class: "col s12" do |f| %>
+      <%= form_with model: @tests, url: test_questions_path(@test), method: :post, class: "col s12" do |f| %>
       <div class="input-field col s6">
         <%= f.label :question_text, "Enter question text"%>
-        <%= f.text_field :question_text %>
+        <%= f.text_field "question[text]" %>
         <%= f.submit "Create", class: "btn" %>
       </div>
       <% end %>
