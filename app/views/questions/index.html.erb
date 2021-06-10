@@ -12,8 +12,8 @@
     <% @questions.each do |question| %>
     <li class="collection-item">
       <ul>
-        <a href=<%=question_path(question.id) %>><%= question.text %></a>
-        <a href=<%=question_path(question.id) %> data-method="delete" class="secondary-content">
+        <a href=<%=question_path(question) %>><%= question.text %></a>
+        <a href=<%=question_path(question) %> data-method="delete" class="secondary-content">
           <i class="material-icons">delete</i>
         </a>
       </ul>
