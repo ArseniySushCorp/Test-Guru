@@ -5,17 +5,19 @@ class QuestionsController < ApplicationController
 
   def show; end
 
-  def new; end
+  def new
+    @question = Question.new
+  end
 
   def index
     @questions = @test.questions
   end
 
   def create
-    @question = @test.questions.new(params.require(:question).permit(:text))
+    @question = @test.questions.create(question_params)
 
-    if @question.save
-      render plain: "Qustion ##{@question.id} created"
+    if @question.errors.empty?
+      redirect_to @question
     else
       render :new
     end
@@ -28,6 +30,10 @@ class QuestionsController < ApplicationController
   end
 
   private
+
+  def question_params
+    params.require(:question).permit(:text)
+  end
 
   def find_test
     @test = Test.find(params.require(:test_id))
