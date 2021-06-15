@@ -1,0 +1,33 @@
+<footer class="page-footer light-blue">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Test guru project</h5>
+        <p class="grey-text text-lighten-4">Create and pass tests online</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li>
+            <%= link_to "Study project in Thinknetica",
+                        "https://thinknetica.com",
+                        class: "grey-text text-lighten-3",
+                        target: "_blank" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <div class="container">
+      Arseniy Suschevskiy, <%= current_year %>
+
+      <%= link_to "Github",
+                  github_url('ArseniySushCorp', 'Thinknetica_RoR_course'),
+                  class: "grey-text text-lighten-4 right",
+                  target: "_blank" %>
+
+    </div>
+  </div>
+</footer>

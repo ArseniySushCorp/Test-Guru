@@ -25,8 +25,6 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-
-    render plain: "Question #{@question.id} deleted"
   end
 
   private
