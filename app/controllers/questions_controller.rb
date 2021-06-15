@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.create(question_params)
 
-    if @question.errors.empty?
+    if @question.save
       redirect_to @question
     else
       render :new
