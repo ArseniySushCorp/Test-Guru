@@ -1,0 +1,24 @@
+<div class="container">
+  <ul class="collection with-header">
+    <li class="collection-header">
+      <h4>
+        <%=@test.title %> questions:
+      </h4>
+      <a href=<%= new_test_question_path %> class="btn-floating btn-large waves-effect waves-light">
+        <i class="material-icons">add</i>
+      </a>
+    </li>
+
+    <% @questions.each do |question| %>
+    <li class="collection-item">
+      <ul>
+        <a href=<%=question_path(question) %>><%= question.text %></a>
+        <a href=<%=question_path(question) %> data-method="delete" class="secondary-content">
+          <i class="material-icons">delete</i>
+        </a>
+      </ul>
+    </li>
+    <% end %>
+
+  </ul>
+</div>

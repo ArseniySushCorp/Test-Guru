@@ -1,0 +1,12 @@
+<div class="container">
+  <h3>Create new question for Test #<%= @test.id %></h3>
+  <div class="row" style="margin-top: 20px;">
+    <%= form_with model: [@test, @question], url: test_questions_path(@test), method: :post, class: "col s12" do |f| %>
+    <div class="input-field col s6">
+      <%= f.label "Enter question text"%>
+      <%= f.text_field :text %>
+      <%= f.submit "Create", class: "btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
