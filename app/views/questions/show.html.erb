@@ -1,6 +1,5 @@
-<div class="container">
-  <h1>Question <%=@question.id %></h1>
-  <div class="row">
-    <%=@question.text %>
-  </div>
+<h3>Question <%=@question.id %></h3>
+<div class="row">
+  <%=@question.text %>
 </div>
+<%= link_to "Back to questions", test_path(@question.test), class: "btn blue" %>

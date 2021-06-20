@@ -1,0 +1,23 @@
+<div class="row">
+  <h4>
+    <%=@test.title %>, level: <%= @test.level %>
+    <%= link_to "Add new question", new_test_question_path(@test), class: "btn waves-effect waves-light blue right" %>
+  </h4>
+</div>
+<ul class="collection with-header">
+  <% @test.questions.each do |question| %>
+  <li class="collection-item">
+    <ul>
+      <a href=<%=question_path(question) %>><%= question.text %></a>
+      <a href=<%=question_path(question) %> data-method="delete" class="secondary-content">
+        <i class="material-icons blue-text">delete</i>
+      </a>
+      <a href=<%=edit_question_path(question) %> class="secondary-content">
+        <i class="material-icons blue-text">mode_edit</i>
+      </a>
+    </ul>
+  </li>
+  <% end %>
+
+</ul>
+<%= link_to "Back to tests", tests_path, class: "btn blue" %>

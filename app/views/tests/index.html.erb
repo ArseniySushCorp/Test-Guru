@@ -1,0 +1,26 @@
+<div class="row">
+  <h4>
+    Tests list
+    <%= link_to "Add new test", new_test_path, class: "btn waves-effect waves-light blue right" %>
+  </h4>
+</div>
+<ul class="collection with-header">
+
+  <% @tests.each do |test| %>
+  <li class="collection-item">
+    <%= link_to test.title, test_path(test) %>
+
+    <span>level: <%= test.level %></span>
+
+    <span>category: <%= test.category.title %></span>
+
+    <a href=<%=test_path(test) %> data-method="delete" class="secondary-content">
+      <i class="material-icons blue-text">delete</i>
+    </a>
+    <a href=<%=edit_test_path(test) %> class="secondary-content">
+      <i class="material-icons blue-text">mode_edit</i>
+    </a>
+  </li>
+  <% end %>
+
+</ul>
