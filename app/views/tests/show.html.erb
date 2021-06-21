@@ -6,7 +6,7 @@
 </div>
 
 <ul class="collection with-header">
-  <%= render partial: "question", collection: @test.questions %>
+  <%= render @test.questions %>
 </ul>
 
 <%= link_to "Back to tests", tests_path, class: "btn blue" %>
