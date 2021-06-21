@@ -12,9 +12,7 @@ class QuestionsController < ApplicationController
   def edit; end
 
   def update
-    @question.update(question_params)
-
-    if @question.save
+    if @question.update(question_params)
       redirect_to test_path(@question.test)
     else
       render :edit

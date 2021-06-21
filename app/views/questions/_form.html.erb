@@ -1,6 +1,6 @@
 <div class="row" style="margin-top: 20px;">
 
-  <%= form_with model: question.new_record? ? [test, question] : question do |f| %>
+  <%= form_with model: [test, question] do |f| %>
   <div class="input-field col s6">
     <%= f.label "Question text"%>
     <%= f.text_field :text %>
