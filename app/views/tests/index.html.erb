@@ -1,0 +1,10 @@
+<div class="row">
+  <h4>
+    Tests list
+    <%= link_to "Add new test", new_test_path, class: "btn waves-effect waves-light blue right" %>
+  </h4>
+</div>
+<ul class="collection with-header">
+
+  <%= render @tests %>
+</ul>

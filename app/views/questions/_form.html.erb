@@ -1,0 +1,12 @@
+<div class="row" style="margin-top: 20px;">
+
+  <%= form_with model: [test, question] do |f| %>
+  <div class="input-field col s6">
+    <%= f.label "Question text"%>
+    <%= f.text_field :text %>
+    <%= link_to 'Back', test_path(test), class: "btn blue" %>
+    <%= f.submit "#{question.new_record? ? 'Create' : 'Change'}", class: "btn blue" %>
+  </div>
+
+  <% end %>
+</div>

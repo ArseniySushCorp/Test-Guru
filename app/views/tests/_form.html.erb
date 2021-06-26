@@ -1,0 +1,16 @@
+<%= form_with model: test do |f| %>
+<%= f.hidden_field :author_id, value: User.first.id %>
+
+<%= f.label :title, "Title" %>
+<%= f.text_field :title %>
+
+<%= f.label :category_id, "Category" %>
+<%= f.select :category_id, Category.all.map { |c| [c.title, c.id] } %>
+
+<%= f.label :level, "Level" %>
+<%= f.number_field :level %>
+
+<%= link_to 'Back', tests_path(test), class: "btn blue" %>
+
+<%= f.submit "#{test.new_record? ? 'Create' : 'Change'}", class: "btn blue" %>
+<% end %>
