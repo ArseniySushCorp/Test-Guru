@@ -17,9 +17,9 @@ tests = Test.create!([
 ])
 
 passed_tests = PassedTest.create!([
-  { test: tests.first, user: users.first },
-  { test: tests[1], user: users.first },
-  { test: tests[2], user: users.first },
+  { test: tests.first, user: users.first, current_questions: 0 },
+  { test: tests[1], user: users.first, current_questions: 1 },
+  { test: tests[2], user: users.first, current_questions: 2 },
 ])
 
 questions = Question.create!([
@@ -34,7 +34,7 @@ questions = Question.create!([
   { text: "Seed question - 4 second test", test: tests.last },
 ])
 
-answer = Answer.create!([
+answers = Answer.create!([
   { text: "Seed answer 1 first question first test", correct: true,  question: questions.first },
   { text: "Seed answer 2 first question first test", correct: false, question: questions.first },
 
