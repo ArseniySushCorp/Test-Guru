@@ -1,0 +1,22 @@
+<%= form_with model: [@question, @answer] do |f| %>
+
+<div class="row" style="margin-top: 20px;">
+  <div class="row">
+    <div class="input-field inline col s6">
+      <%= f.label :text, "Answer text" %>
+      <%= f.text_field :text %>
+    </div>
+
+    <div class="col s2">
+      <%= f.label :correct do %>
+      <%= f.check_box :correct %>
+      <span>Correct</span>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <%= f.submit "#{@answer.new_record? ? 'Create' : 'Change'}", class: "btn blue" %>
+</div>
+<% end %>

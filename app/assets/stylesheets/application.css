@@ -17,3 +17,8 @@ main {
 select {
   display: block;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+}

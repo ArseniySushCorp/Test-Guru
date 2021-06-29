@@ -1,0 +1,11 @@
+<li class="collection-item">
+  <ul>
+    <a href=<%=answer_path(answer) %>><%= answer.text %></a>
+    <a href=<%=answer_path(answer) %> data-method="delete" class="secondary-content">
+      <i class="material-icons blue-text">delete</i>
+    </a>
+    <a href=<%=edit_answer_path(answer) %> class="secondary-content">
+      <i class="material-icons blue-text">mode_edit</i>
+    </a>
+  </ul>
+</li>

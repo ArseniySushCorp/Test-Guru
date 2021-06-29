@@ -1,0 +1,9 @@
+<h3>New Answer</h3>
+
+<p>
+  <%= @question.text %>
+</p>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', question_path(@question), class: 'btn blue' %>
