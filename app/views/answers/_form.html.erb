@@ -18,5 +18,6 @@
 
 <div class="row">
   <%= f.submit "#{@answer.new_record? ? 'Create' : 'Change'}", class: "btn blue" %>
+  <%= link_to 'Back', question_path(@answer.question), class: 'btn blue' %>
 </div>
 <% end %>
