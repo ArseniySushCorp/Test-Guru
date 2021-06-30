@@ -1,11 +1,15 @@
 <li class="collection-item">
-  <ul>
+  <div class="collection-cell">
     <a href=<%=answer_path(answer) %>><%= answer.text %></a>
-    <a href=<%=answer_path(answer) %> data-method="delete" class="secondary-content">
-      <i class="material-icons blue-text">delete</i>
-    </a>
+  </div>
+
+  <div class="collection-cell">
     <a href=<%=edit_answer_path(answer) %> class="secondary-content">
       <i class="material-icons blue-text">mode_edit</i>
     </a>
-  </ul>
+
+    <a href=<%=answer_path(answer) %> data-method="delete" class="secondary-content">
+      <i class="material-icons blue-text">delete</i>
+    </a>
+  </div>
 </li>
