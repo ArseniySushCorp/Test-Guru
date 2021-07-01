@@ -10,12 +10,8 @@
 
   <div class="collection-cell">
     <%= button_to 'Start', start_test_path(test), class: 'btn blue btn-start' %>
-    <a href=<%=edit_test_path(test) %> class="secondary-content">
-      <i class="material-icons blue-text">mode_edit</i>
-    </a>
-
-    <a href=<%=start_test_path(test) %> class="secondary-content">
-      <i class="material-icons blue-text">delete</i>
-    </a>
+    <%= link_to "Edit", edit_test_path(test), method: :delete, class: 'secondary-content btn blue'%>
+    |
+    <%= link_to "Delete", test_path(test), method: :delete, class: 'secondary-content btn blue'%>
   </div>
 </li>

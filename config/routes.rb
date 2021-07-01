@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :passed_tests, only: %i[show update] do
-    member do
-      get :result
-    end
+    get :result, on: :member
   end
 end

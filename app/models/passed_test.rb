@@ -5,6 +5,8 @@ class PassedTest < ApplicationRecord
 
   before_validation :set_current_question, on: %i[create update]
 
+  SUCCESS_PERCENTS = 0.85
+
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
@@ -20,7 +22,7 @@ class PassedTest < ApplicationRecord
   end
 
   def success?
-    result > 0.85
+    result > SUCCESS_PERCENTS
   end
 
   private
@@ -29,14 +31,8 @@ class PassedTest < ApplicationRecord
     self.current_question = current_question.nil? ? test.questions.first : next_question
   end
 
-  def before_save_set_next_question
-    self.current_question = next_question
-  end
-
   def correct_answer?(answer_ids)
-    correct_answers_size = correct_answers.size
-
-    (correct_answers_size == correct_answers.where(id: answer_ids).size) && correct_answers_size == answer_ids.size
+    correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
   end
 
   def correct_answers
