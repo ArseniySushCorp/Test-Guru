@@ -1,0 +1,7 @@
+<h3> The <%= @passed_test.test.title %> Test was completed!</h3>
+<div class="section">
+  Your result is <%=score(@passed_test) %>
+  <%= closing_message(@passed_test) %>
+</div>
+
+<%= link_to "Back to tests", tests_path, class: 'btn blue' %>

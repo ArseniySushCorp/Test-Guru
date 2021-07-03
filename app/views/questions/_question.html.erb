@@ -1,0 +1,11 @@
+<li class="collection-item">
+  <div class="collection-cell">
+    <%= link_to question.text, question_path(question) %>
+  </div>
+
+  <div class="collection-cell">
+    <%= link_to "Edit", edit_question_path(question), class: 'secondary-content btn blue'%>
+    |
+    <%= link_to "Delete", question_path(question), method: :delete, class: 'secondary-content btn blue'%>
+  </div>
+</li>

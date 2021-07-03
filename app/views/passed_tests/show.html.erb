@@ -1,0 +1,34 @@
+<ul class="pagination">
+  <% @passed_test.test.questions.each.with_index do |question, index| %>
+  <li class=<%= @passed_test.current_question.id.equal?(question.id) ? 'light-blue' : '' %>>
+    <a>
+      <%= index + 1 %>
+    </a>
+  </li>
+  <% end %>
+</ul>
+
+<h3>
+  Passing the <%=@passed_test.test.title %> test
+</h3>
+
+<h5>
+  Question: <%= @passed_test.current_question.text %>
+</h5>
+
+<%= form_with url: passed_test_path(@passed_test), local: true, method: :put do |f| %>
+<div class="section">
+  <%= f.collection_check_boxes :answer_ids, 
+                             @passed_test.current_question.answers, 
+                             :id, :text, include_hidden: false do |b| %>
+  <div class="col s2">
+    <%= b.label do %>
+    <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+    <span><%=b.object.text %></span>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
+<%= f.submit "Next", class: 'btn blue' %>
+<% end %>
