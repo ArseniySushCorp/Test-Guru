@@ -1,6 +1,6 @@
 <li class="collection-item">
   <div class="collection-cell">
-    <a href=<%=answer_path(answer) %>><%= answer.text %></a>
+    <%= link_to answer.text, answer_path(answer) %>
   </div>
 
   <div class="collection-cell">
