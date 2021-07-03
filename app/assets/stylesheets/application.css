@@ -57,3 +57,7 @@ select {
 .section {
   margin: 20 0 30px;
 }
+
+.errors {
+  color: red;
+}
