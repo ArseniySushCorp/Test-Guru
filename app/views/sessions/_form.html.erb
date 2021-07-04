@@ -1,0 +1,20 @@
+<%= form_with url: sessions_path, local: true do |f| %>
+
+<%= render 'shared/flash' %>
+<div class="row">
+  <div class="section col s6">
+    <div class="input-field">
+      <%= f.text_field :email, type: "email", class: "validate" %>
+      <%= f.label :email, "Email" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.password_field :password, class: "validate" %>
+      <%= f.label :password, "Password" %>
+    </div>
+  </div>
+</div>
+<%= link_to "Back", root_path, class: "btn blue" %>
+|
+<%= f.submit "Login", class: "btn blue" %>
+<% end %>
