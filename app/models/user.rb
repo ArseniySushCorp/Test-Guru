@@ -3,6 +3,10 @@ class User < ApplicationRecord
   has_many :passed_tests, dependent: :destroy
   has_many :tests, through: :passed_tests
 
+  validates :login, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :email, format: { with: /\A[a-z0-9+\-_.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+
   has_secure_password
 
   def passed_test(test)

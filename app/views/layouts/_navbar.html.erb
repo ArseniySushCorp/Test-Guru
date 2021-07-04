@@ -3,6 +3,23 @@
       <div class="container">
         <div class="col s12">
           <%= link_to "Test guru", root_path, class: "brand-logo center" %>
+          <ul class="right">
+            <% if logged_in? %>
+            <li>
+              <%= current_user.login %> guru
+            </li>
+            <li>
+              <%= link_to "Sign out", sign_out_path, class: 'btn light-blue' %>
+            </li>
+            <% else %>
+            <li>
+              <%= link_to "Sign in", sign_in_path %>
+            </li>
+            <li>
+              <%= link_to "Sign up", sign_up_path, class: 'btn light-blue' %>
+            </li>
+            <% end %>
+          </ul>
         </div>
       </div>
     </div>
