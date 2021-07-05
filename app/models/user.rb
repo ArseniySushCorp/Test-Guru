@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   validates :login, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :email, format: { with: /\A[a-z0-9+\-_.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_secure_password
 

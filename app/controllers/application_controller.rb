@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     redirect_to sign_in_path unless current_user
 
-    cookies[:user_path] = request.method_symbol.eql?(:get) ? request.original_url : nil
+    cookies[:logged_off_request_path] = request.method_symbol.eql?(:get) ? request.original_url : nil
   end
 
   def current_user
