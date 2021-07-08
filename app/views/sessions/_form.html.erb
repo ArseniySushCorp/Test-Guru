@@ -1,6 +1,7 @@
 <%= form_with url: sessions_path, local: true do |f| %>
 
-<%= render 'shared/flash' %>
+<%= show_flash(flash) %>
+
 <div class="row">
   <div class="section col s6">
     <div class="input-field">
