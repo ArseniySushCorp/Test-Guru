@@ -10,7 +10,7 @@ module ApplicationHelper
             target: '_blank', rel: 'nofollow'
   end
 
-  def show_flash(flash)
-    render 'shared/flash' if flash[:alert]
+  def show_flash_alert
+    render 'shared/flash', message: flash[:alert] if flash[:alert]
   end
 end
