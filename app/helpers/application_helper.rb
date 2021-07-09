@@ -9,4 +9,8 @@ module ApplicationHelper
             class: 'grey-text text-lighten-4 right',
             target: '_blank', rel: 'nofollow'
   end
+
+  def show_flash_alert
+    render 'shared/flash', message: flash[:alert] if flash[:alert]
+  end
 end

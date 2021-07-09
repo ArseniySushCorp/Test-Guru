@@ -1,0 +1,30 @@
+<%= form_with model: @user, local: true do |f| %>
+<%= render 'shared/errors', resource: @user %>
+
+<div class="row">
+  <div class="section col s6">
+    <div class="input-field">
+      <%= f.text_field :login, class: "validate" %>
+      <%= f.label :login, "Login" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.text_field :email, type: "email", class: "validate" %>
+      <%= f.label :email, "Email" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.password_field :password, class: "validate" %>
+      <%= f.label :password, "Password" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.password_field :password_confirmation, class: "validate"%>
+      <%= f.label :password_confirmation, "Password" %>
+    </div>
+  </div>
+</div>
+<%= link_to "Back", root_path, class: "btn blue" %>
+|
+<%= f.submit "Create", class: "btn blue" %>
+<% end %>

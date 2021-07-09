@@ -1,2 +1,15 @@
 ru:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Не может быть пустым"
+            login:
+              blank: "Не может быть пустым"
+            password_confirmation:
+              blank: "Не может быть пустым"
+              confirmation: "Пароли не совпадают"
+            password:
+              blank: "Не может быть пустым"
