@@ -1,7 +1,9 @@
 <div class="row">
   <ul class="collection col s6">
+    <% flash.each do |key, message| %>
     <li class="collection-item errors">
       <%= message %>
     </li>
+    <% end %>
   </ul>
 </div>
