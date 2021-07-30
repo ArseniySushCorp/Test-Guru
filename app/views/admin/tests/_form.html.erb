@@ -1,5 +1,4 @@
 <%= form_with model: [:admin, test], local: true do |f| %>
-<%= f.hidden_field :author_id, value: User.first.id %>
 
 <%= f.label :title, "Title" %>
 <%= f.text_field :title %>
