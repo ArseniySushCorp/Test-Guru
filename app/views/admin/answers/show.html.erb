@@ -8,4 +8,4 @@
 <div class="row"><%= @answer.text %></div>
 <div class="row">Correct: <%= @answer.correct %></div>
 
-<%= link_to 'Back', question_path(@answer.question), class: 'btn blue' %>
+<%= link_to 'Back', admin_question_path(@answer.question), class: 'btn blue' %>
