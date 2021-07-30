@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource)
-    flash[:notice] = t('signed_in', name: current_user.first_name)
+    if current_user && current_user.sign_in_count == 1
+      flash[:notice] = t('signed_up', name: resource.first_name)
+    end
+
     if resource.is_a?(Admin)
       admin_tests_path
     else

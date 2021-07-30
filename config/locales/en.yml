@@ -31,4 +31,4 @@
 
 en:
   hello: "Hello world"
-  signed_in: "Hello, %{name}!"
+  signed_up: "Hello, %{name}!"
