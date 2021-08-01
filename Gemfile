@@ -25,6 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # Auth
 gem 'devise'
 
+# Networking
+
+gem 'faraday'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

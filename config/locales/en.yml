@@ -33,3 +33,8 @@ en:
   hello: "Hello world"
   signed_up: "Nice to meet you, %{name} guru!"
   signed_in: "Hello, guru!"
+
+  passed_tests:
+    gist:
+      success: "Gist saved successfully"
+      failure: "Gist not saved"
