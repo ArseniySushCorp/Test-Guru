@@ -4,12 +4,6 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  def after_sign_up_path_for(user)
-    if current_user.sign_in_count == 1
-      flash[:notice] = t('signed_up', name: user.first_name)
-    end
-  end
-
   def after_sign_in_path_for(user)
     if user.is_a?(Admin)
       admin_tests_path
