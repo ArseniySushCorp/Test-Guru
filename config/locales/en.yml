@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  signed_up: "Nice to meet you, %{name} guru!"
+  signed_in: "Hello, guru!"

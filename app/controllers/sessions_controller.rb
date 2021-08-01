@@ -1,23 +1,13 @@
-class SessionsController < ApplicationController
-  def new
-  end
+class SessionsController < Devise::SessionsController
+  after_action :greetings_after_login, only: :create
 
   def create
-    user = User.find_by(email: params[:email])
-
-    if user&.authenticate(params[:password])
-      session[:user_id] = user.id
-
-      redirect_to cookies.delete(:logged_off_request_path) || tests_path
-    else
-      flash.now[:alert] = 'Are you Guru? Check your email and password'
-
-      render :new
-    end
+    super
   end
 
-  def destroy
-    session.delete(:user_id)
-    redirect_to root_path
+  private
+
+  def greetings_after_login
+    flash[:notice] = current_user.sign_in_count == 1 ? t('signed_up', name: current_user.first_name) : t(signed_in)
   end
 end

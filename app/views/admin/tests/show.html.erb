@@ -1,0 +1,12 @@
+<div class="row">
+  <h4>
+    <%=@test.title %>, level: <%= @test.level %>
+    <%= link_to "Add new question", new_admin_test_question_path(@test), class: "btn waves-effect waves-light blue right" %>
+  </h4>
+</div>
+
+<ul class="collection with-header">
+  <%= render @test.questions %>
+</ul>
+
+<%= link_to "Back to tests", admin_tests_path, class: "btn blue" %>

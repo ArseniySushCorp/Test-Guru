@@ -1,0 +1,11 @@
+<li class="collection-item">
+  <div class="collection-cell">
+    <%= link_to answer.text, admin_answer_path(answer) %>
+  </div>
+
+  <div class="collection-cell">
+    <%= link_to "Edit", edit_admin_answer_path(answer), class: 'secondary-content btn blue'%>
+    |
+    <%= link_to "Delete", admin_answer_path(answer), method: :delete, class: 'secondary-content btn blue'%>
+  </div>
+</li>
