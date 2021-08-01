@@ -3,7 +3,7 @@
     <ul class="collection col s6">
       <% flash.each do |key, message| %>
       <li class="collection-item errors">
-        <%= message %>
+        <%= message.html_safe %>
       </li>
       <% end %>
     </ul>

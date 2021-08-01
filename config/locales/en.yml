@@ -36,7 +36,8 @@ en:
 
   passed_tests:
     gist:
-      success: "Gist saved successfully %{url}"
+      # success: "Gist saved successfully %{url}"
+      success: "Gist saved successfully"
       failure: "Gist not saved"
       description: "A question about %{title} from TestGuru"
       file_name: "test-guru-question.txt"

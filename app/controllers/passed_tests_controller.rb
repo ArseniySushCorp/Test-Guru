@@ -23,7 +23,7 @@ class PassedTestsController < ApplicationController
     falsh_options = if result.success?
                       Gist.create(url: result.html_url, user: current_user, question: @passed_test.current_question)
 
-                      { notice: t('.success', url: result.html_url) }
+                      { notice: helpers.link_to(t('.success'), result.html_url) }
                     else
                       { alert: t('.failure') }
                     end
