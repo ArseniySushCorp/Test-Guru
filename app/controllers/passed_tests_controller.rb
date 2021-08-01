@@ -21,7 +21,7 @@ class PassedTestsController < ApplicationController
     result = GistQuestionService.new(@passed_test.current_question).call
 
     falsh_options = if result.success?
-                      Gist.create(url: result.html_url, user: current_user, question: @passed_test.current_question)
+                      create_gist(result.html_url)
 
                       { notice: helpers.link_to(t('.success'), result.html_url) }
                     else
@@ -35,5 +35,9 @@ class PassedTestsController < ApplicationController
 
   def set_passed_test
     @passed_test = PassedTest.find(params[:id])
+  end
+
+  def create_gist(url)
+    current_user.gists.create(url: url, user: current_user, question: @passed_test.current_question)
   end
 end
