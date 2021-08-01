@@ -20,7 +20,13 @@ class PassedTestsController < ApplicationController
   def gist
     result = GistQuestionService.new(@passed_test.current_question).call
 
-    falsh_options = result.success? ? { notice: t('.success') } : { alert: t('.failure') }
+    falsh_options = if result.success?
+                      Gist.create(url: result.html_url, user: current_user, question: @passed_test.current_question)
+
+                      { notice: t('.success', url: result.html_url) }
+                    else
+                      { alert: t('.failure') }
+                    end
 
     redirect_to @passed_test, falsh_options
   end
