@@ -8,6 +8,6 @@ class SessionsController < Devise::SessionsController
   private
 
   def greetings_after_login
-    flash[:notice] = current_user.sign_in_count == 1 ? t('signed_up', name: current_user.first_name) : t(signed_in)
+    flash[:notice] = current_user.sign_in_count == 1 ? t('signed_up', name: current_user.first_name) : t('signed_in')
   end
 end

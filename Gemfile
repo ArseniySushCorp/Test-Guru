@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Auth
 gem 'devise'
 
+# GitHub client
+gem 'octokit', '~> 4.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

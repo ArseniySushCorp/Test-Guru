@@ -4,12 +4,14 @@ Rails.application.routes.draw do
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout },
                      controllers: { sessions: 'sessions' }
 
+  resources :gists, only: :create
+
   resources :tests, only: :index do
     post :start, on: :member
   end
 
   resources :passed_tests, only: %i[show update] do
-    get :result, on: :member
+    get  :result, on: :member
   end
 
   namespace :admin do
@@ -18,5 +20,7 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+
+    resources :gists, only: :index
   end
 end
