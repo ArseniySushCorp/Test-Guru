@@ -1,6 +1,5 @@
 class PassedTestsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_passed_test, only: %i[show update result gist]
+  before_action :set_passed_test, only: %i[show update result]
 
   def show; end
 
@@ -17,27 +16,9 @@ class PassedTestsController < ApplicationController
     end
   end
 
-  def gist
-    result = GistQuestionService.new(@passed_test.current_question).call
-
-    falsh_options = if result.success?
-                      create_gist(result.html_url)
-
-                      { notice: helpers.link_to(t('.success'), result.html_url) }
-                    else
-                      { alert: t('.failure') }
-                    end
-
-    redirect_to @passed_test, falsh_options
-  end
-
   private
 
   def set_passed_test
     @passed_test = PassedTest.find(params[:id])
-  end
-
-  def create_gist(url)
-    current_user.gists.create(url: url, user: current_user, question: @passed_test.current_question)
   end
 end

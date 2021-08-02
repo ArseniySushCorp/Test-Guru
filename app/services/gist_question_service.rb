@@ -20,9 +20,9 @@ class GistQuestionService
 
   def gist_params
     {
-      description: I18n.t('gist.description', title: @test.title),
+      description: I18n.t('gists.description', title: @test.title),
       files: {
-        I18n.t('gist.file_name') => {
+        I18n.t('gists.file_name') => {
           content: gist_content
         }
       }
@@ -30,8 +30,6 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.text]
-    content << @question.answers.pluck(:text)
-    content.join("\n")
+    [@question.text, *@question.answers.pluck(:text)].join("\n")
   end
 end
