@@ -1,16 +1,16 @@
-<li class="collection-item">
-  <div class="collection-cell">
+<tr>
+  <td>
     <%= link_to test.title, admin_test_path(test) %>
-
-    <span>level: <%= test.level %></span>
-
-    <span>category: <%= test.category.title %></span>
-
-  </div>
-
-  <div class="collection-cell">
-    <%= link_to "Edit", edit_admin_test_path(test), method: :delete, class: 'secondary-content btn blue'%>
-    |
-    <%= link_to "Delete", admin_test_path(test), method: :delete, class: 'secondary-content btn blue'%>
-  </div>
-</li>
+  </td>
+  <td>
+    <span><%= test.level %></span>
+  </td>
+  <td>
+    <span><%= test.category.title %></span>
+  </td>
+  <td>
+    <%= link_to "View", admin_test_path(test), class: 'btn blue'%>
+    <%= link_to "Edit", edit_admin_test_path(test), class: 'btn blue'%>
+    <%= link_to "Delete", admin_test_path(test), method: :delete, class: 'btn blue'%>
+  </td>
+</tr>

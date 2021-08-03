@@ -1,11 +1,14 @@
-<li class="collection-item">
-  <div class="collection-cell">
+<tr>
+  <td>
     <%= test.title %>
-    <span>level: <%= test.level %></span>
-    <span>category: <%= test.category.title %></span>
-  </div>
-
-  <div class="collection-cell">
+  </td>
+  <td>
+    <span><%= test.level %></span>
+  </td>
+  <td>
+    <span><%= test.category.title %></span>
+  </td>
+  <td>
     <%= button_to 'Start', start_test_path(test), class: 'btn blue btn-start' %>
-  </div>
-</li>
+  </td>
+</tr>
