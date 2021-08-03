@@ -1,7 +1,7 @@
 document.addEventListener("turbolinks:load", () => {
   const control = document.querySelector(".tests-table__title")
 
-  control && control.addEventListener("click", sortRowsByTitle)
+  if (control) control.addEventListener("click", sortRowsByTitle)
 })
 
 const tableNodeElements = () => {

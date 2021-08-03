@@ -6,16 +6,20 @@
   </h4>
 </div>
 
-<table>
+<table class="tests-table">
   <thead>
     <tr>
-        <th>Title</th>
+        <th class="tests-table__title">
+          Title
+          <i class="material-icons tiny hide" id="arrow_upward">arrow_upward</i>
+          <i class="material-icons tiny hide" id="arrow_downward">arrow_downward</i>
+        </th>
         <th>Level</th>
         <th>Category</th>
         <th>Actions</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="tests-table__tbody">
     <%= render @tests %>
   </tbody>
 </table>
