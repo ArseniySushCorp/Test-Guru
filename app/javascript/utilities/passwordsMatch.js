@@ -1,8 +1,4 @@
-document.addEventListener("turbolinks:load", () => {
-  if (window.location.href.includes("sign_up")) new passwordsMatch()
-})
-
-export default class passwordsMatch {
+export default class PasswordsMatch {
   constructor() {
     this.form = document.getElementById("new_user")
     this.password = document.getElementById("user_password")
