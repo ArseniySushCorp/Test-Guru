@@ -4,6 +4,20 @@
   </h4>
 </div>
 
-<ul class="collection with-header">
-  <%= render @tests %>
-</ul>
+<table class="tests-table">
+  <thead>
+    <tr>
+        <th class="tests-table__title">
+          Title
+          <i class="material-icons tiny hide" id="arrow_upward">arrow_upward</i>
+          <i class="material-icons tiny hide" id="arrow_downward">arrow_downward</i>
+        </th>
+        <th>Level</th>
+        <th>Category</th>
+        <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody class="tests-table__tbody">
+    <%= render @tests %>
+  </tbody>
+</table>
