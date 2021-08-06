@@ -1,4 +1,4 @@
-export const tableNodeElements = () => {
+export const sortingNodes = () => {
   const tableBody = document.querySelector(".tests-table__tbody")
 
   return {

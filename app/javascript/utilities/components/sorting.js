@@ -1,7 +1,7 @@
-import { tableNodeElements, isHide, hide, show, getTextContent } from "./helpers"
+import { sortingNodes, isHide, hide, show, getTextContent } from "../helpers"
 
 const sortRowsByTitle = () => {
-  const { sortedRows, tableBody, sortedBody, upwardArrow, downwardArrow } = tableNodeElements()
+  const { sortedRows, tableBody, sortedBody, upwardArrow, downwardArrow } = sortingNodes()
   sortedBody.classList.add("tests-table__tbody")
 
   if (isHide(upwardArrow)) {

@@ -1,6 +1,10 @@
 <tr>
   <td>
-    <%= link_to test.title, admin_test_path(test) %>
+    <%= tag.span test.title, class: 'test-title', data: { test_id: test.id } %>
+    <a class="btn-floating btn-small blue right">
+      <%= tag.i "edit", class: "form-inline-btn material-icons", data: { test_id: test.id } %>
+    </a>
+
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
   <td>
