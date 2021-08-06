@@ -1,6 +1,7 @@
 <tr>
   <td>
     <%= link_to test.title, admin_test_path(test) %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
   <td>
     <span><%= test.level %></span>
