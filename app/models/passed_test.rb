@@ -25,6 +25,10 @@ class PassedTest < ApplicationRecord
     result > SUCCESS_PERCENTS
   end
 
+  def question_position
+    test.questions.order(:id).where('id <= ?', current_question.id).size
+  end
+
   private
 
   def set_current_question

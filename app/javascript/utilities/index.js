@@ -1,6 +1,7 @@
 import PasswordsMatch from "./components/passwordsMatch"
 import sortRowsByTitle from "./components/sorting"
 import { formInlineLinkHandler, formInlineHandler } from "./components/form_inline"
+import calculateProgress from "./components/progressBar"
 
 document.addEventListener("turbolinks:load", () => {
   if (window.location.href.includes("sign_up")) new PasswordsMatch()
@@ -27,4 +28,10 @@ document.addEventListener("turbolinks:load", () => {
     const resourceId = errors.dataset.resourceId
     formInlineHandler(resourceId)
   }
+})
+
+document.addEventListener("turbolinks:load", () => {
+  const control = document.querySelector(".determinate")
+
+  if (control) calculateProgress(control)
 })
