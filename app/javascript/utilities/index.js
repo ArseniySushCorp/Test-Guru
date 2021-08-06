@@ -3,34 +3,31 @@ import sortRowsByTitle from "./components/sorting"
 import { formInlineLinkHandler, formInlineHandler } from "./components/form_inline"
 import calculateProgress from "./components/progressBar"
 
-document.addEventListener("turbolinks:load", () => {
-  if (window.location.href.includes("sign_up")) new PasswordsMatch()
-})
+onLoad(() => window.location.href.includes("sign_up") && new PasswordsMatch())
 
-document.addEventListener("turbolinks:load", () => {
+onLoad(() => {
   const control = document.querySelector(".tests-table__title")
 
-  if (control) control.addEventListener("click", sortRowsByTitle)
+  if (control) control.onclick = sortRowsByTitle
 })
 
-document.addEventListener("turbolinks:load", () => {
+onLoad(() => {
   const controls = document.querySelectorAll(".form-inline-btn")
 
   if (controls.length) {
-    controls.forEach((control) => {
-      control.addEventListener("click", formInlineLinkHandler)
-    })
+    controls.forEach((control) => control.addEventListener("click", formInlineLinkHandler))
   }
 
   const errors = document.querySelector(".resource-errors")
 
   if (errors) {
     const resourceId = errors.dataset.resourceId
+
     formInlineHandler(resourceId)
   }
 })
 
-document.addEventListener("turbolinks:load", () => {
+onLoad(() => {
   const control = document.querySelector(".determinate")
 
   if (control) calculateProgress(control)
