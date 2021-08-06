@@ -3,6 +3,8 @@ import sortRowsByTitle from "./components/sorting"
 import { formInlineLinkHandler, formInlineHandler } from "./components/form_inline"
 import calculateProgress from "./components/progressBar"
 
+import { onLoad } from "./helpers"
+
 onLoad(() => window.location.href.includes("sign_up") && new PasswordsMatch())
 
 onLoad(() => {

@@ -12,6 +12,7 @@ export const formInlineHandler = (testId) => {
   const formInline = document.querySelector(`.form-inline[data-test-id="${testId}"]`)
   const editLink = document.querySelector(`.form-inline-btn[data-test-id="${testId}"]`).parentNode
   const cancelBtn = document.querySelector(`.form-inline__cancel-btn[data-test-id="${testId}"]`)
+  const initialValue = formInline.value
 
   const showForm = () => {
     show(formInline)
@@ -26,8 +27,6 @@ export const formInlineHandler = (testId) => {
 
     hide(formInline)
   }
-
-  cancelBtn.onclick = () => hideForm()
 
   isHide(formInline) ? showForm() : hideForm()
 }
