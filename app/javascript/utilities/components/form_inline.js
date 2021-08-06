@@ -14,9 +14,9 @@ export const formInlineHandler = (testId) => {
   const cancelBtn = document.querySelector(`.form-inline__cancel-btn[data-test-id="${testId}"]`)
 
   const showForm = () => {
-    hide(testTitle)
-
     show(formInline)
+
+    hide(testTitle)
     hide(editLink)
   }
 
