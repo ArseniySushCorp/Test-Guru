@@ -1,4 +1,6 @@
-export const tableNodeElements = () => {
+export const onLoad = (func) => document.addEventListener("turbolinks:load", func)
+
+export const sortingNodes = () => {
   const tableBody = document.querySelector(".tests-table__tbody")
 
   return {

@@ -8,6 +8,12 @@
   <% end %>
 </ul>
 
+<div class="progress">
+    <%= tag.div "", class: 'determinate',
+                data: { current: @passed_test.question_position,
+                        amount: @passed_test.test.questions.size } %>
+</div>
+
 <h3>
   Passing the <%=@passed_test.test.title %> test
 </h3>
