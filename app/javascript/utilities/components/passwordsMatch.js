@@ -1,4 +1,4 @@
-export default class PasswordsMatch {
+class PasswordsMatch {
   constructor() {
     this.form = document.getElementById("new_user")
     this.password = document.getElementById("user_password")
@@ -24,3 +24,9 @@ export default class PasswordsMatch {
     })
   }
 }
+
+const init = () => {
+  if (window.location.href.includes("sign_up")) new PasswordsMatch()
+}
+
+export default { init }

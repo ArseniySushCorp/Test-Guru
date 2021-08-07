@@ -6,6 +6,9 @@
 <%= f.label :category_id, "Category" %>
 <%= f.select :category_id, Category.all.map { |c| [c.title, c.id] } %>
 
+<%= f.label :timer, "Choose timer for test" %>
+<%= f.select :timer, Test::AVAILABLE_TIMERS %>
+
 <%= f.label :level, "Level" %>
 <%= f.number_field :level %>
 

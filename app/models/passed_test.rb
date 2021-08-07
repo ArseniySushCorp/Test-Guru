@@ -1,4 +1,6 @@
 class PassedTest < ApplicationRecord
+  SECONDS_PER_MINUTE = 60
+
   belongs_to :test
   belongs_to :user
   belongs_to :current_question, class_name: 'Question', optional: true, inverse_of: :passed_tests
@@ -14,7 +16,7 @@ class PassedTest < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_left.nil?
   end
 
   def result
@@ -27,6 +29,12 @@ class PassedTest < ApplicationRecord
 
   def question_position
     test.questions.order(:id).where('id <= ?', current_question.id).size
+  end
+
+  def time_left
+    time = (passing_time - Time.current).to_i
+
+    time >= 0 ? time : nil
   end
 
   private
@@ -45,5 +53,9 @@ class PassedTest < ApplicationRecord
 
   def next_question
     test.questions.order(:id).find_by('id > ?', current_question.id)
+  end
+
+  def passing_time
+    created_at + test.timer * SECONDS_PER_MINUTE
   end
 end

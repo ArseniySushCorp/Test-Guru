@@ -49,4 +49,10 @@ const compareRowsDesc = (current, next) => {
   return 0
 }
 
-export default sortRowsByTitle
+const init = () => {
+  const control = document.querySelector(".tests-table__title")
+
+  if (control) control.onclick = sortRowsByTitle
+}
+
+export default { init }
