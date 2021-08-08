@@ -15,17 +15,19 @@ class BadgeService
 
   def category?(category)
     test_ids = Test.by_category(category).ids
+
     test_ids.size == count_tests_success(test_ids) && @test.category.title == category
   end
 
   def first_try?(test_title)
-    dublicate_tests = @user.passed_tests.select { |passed_test| passed_test.test.title.eql?(test_title) }
+    dublicate_tests = @user.passed_tests.where(title: test_title)
 
     dublicate_tests.size.eql?(1) && @current_passed_test.success?
   end
 
   def level?(level)
     test_ids = Test.where(level: level).ids
+
     test_ids.size == count_tests_success(test_ids) && @test.level == level.to_i
   end
 
