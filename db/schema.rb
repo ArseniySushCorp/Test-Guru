@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2021_08_07_235211) do
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
     t.string "description", null: false
-    t.string "image"
-    t.string "type", null: false
+    t.string "image", default: "default_badge.png"
+    t.string "badge_type", null: false
     t.string "option"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -112,6 +112,8 @@ ActiveRecord::Schema.define(version: 2021_08_07_235211) do
   create_table "users_badges", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "badge_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["badge_id"], name: "index_users_badges_on_badge_id"
     t.index ["user_id"], name: "index_users_badges_on_user_id"
   end

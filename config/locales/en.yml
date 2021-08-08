@@ -30,6 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  first_try?: Pass the test on the first try
+  category?: Pass all tests in the category
+  level?: Pass all level tests
+
   signed_up: "Nice to meet you, %{name} guru!"
   signed_in: "Hello, guru!"
 
