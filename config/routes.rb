@@ -5,6 +5,7 @@ Rails.application.routes.draw do
                      controllers: { sessions: 'sessions' }
 
   resources :gists, only: :create
+  resources :badges, only: :index
 
   resources :tests, only: :index do
     post :start, on: :member
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges
+
     resources :tests do
       patch :update_inline, on: :member
 
