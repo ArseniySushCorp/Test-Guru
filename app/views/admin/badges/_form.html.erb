@@ -1,0 +1,44 @@
+<h3><%= form_header(@badge) %>
+
+<%= form_with model: [:admin, @badge], local: true do |f| %>
+
+  <%= render 'shared/errors', resource: @badge %>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.label :image %>
+      <%= f.select :badge_type, Badge::BADGE_IMG.map { |type| [ type, type ] } %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.label :option %>
+      <%= f.text_field :option %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s6">
+      <%= f.label :badge_type %>
+      <%= f.select :badge_type, Badge::BADGE_TYPES.map { |type| [ t(type), type ] } %>
+    </div>
+  </div>
+
+<%= link_to 'Back', admin_badges_path, class: "btn blue" %>
+<%= f.submit "#{@badge.new_record? ? 'Create' : 'Change'}", class: "btn blue" %>
+<% end %>
