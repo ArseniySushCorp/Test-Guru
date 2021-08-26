@@ -1,4 +1,6 @@
 class Test < ApplicationRecord
+  AVAILABLE_TIMERS = (1..5).map { |num| num * 5 }
+
   belongs_to :category
   belongs_to :author, class_name: 'User', inverse_of: :own_tests
 

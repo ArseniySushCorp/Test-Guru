@@ -17,3 +17,5 @@ export const hide = (nodeElement) => nodeElement.classList.add("hide")
 export const show = (nodeElement) => nodeElement.classList.remove("hide")
 
 export const getTextContent = (nodeElement) => nodeElement.querySelector("td").textContent
+
+export const addZero = (value) => String(value).padStart(2, "0")

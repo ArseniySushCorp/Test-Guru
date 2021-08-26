@@ -1,18 +1,16 @@
 import { isHide, hide, show } from "../helpers"
 
-export const formInlineLinkHandler = (event) => {
+const formInlineLinkHandler = (event) => {
   event.preventDefault()
 
   const testId = event.target.dataset.testId
   formInlineHandler(testId)
 }
 
-export const formInlineHandler = (testId) => {
+const formInlineHandler = (testId) => {
   const testTitle = document.querySelector(`.test-title[data-test-id="${testId}"]`)
   const formInline = document.querySelector(`.form-inline[data-test-id="${testId}"]`)
   const editLink = document.querySelector(`.form-inline-btn[data-test-id="${testId}"]`).parentNode
-  const cancelBtn = document.querySelector(`.form-inline__cancel-btn[data-test-id="${testId}"]`)
-  const initialValue = formInline.value
 
   const showForm = () => {
     show(formInline)
@@ -30,3 +28,21 @@ export const formInlineHandler = (testId) => {
 
   isHide(formInline) ? showForm() : hideForm()
 }
+
+const init = () => {
+  const controls = document.querySelectorAll(".form-inline-btn")
+
+  if (controls.length) {
+    controls.forEach((control) => control.addEventListener("click", formInlineLinkHandler))
+  }
+
+  const errors = document.querySelector(".resource-errors")
+
+  if (errors) {
+    const resourceId = errors.dataset.resourceId
+
+    formInlineHandler(resourceId)
+  }
+}
+
+export default { init }

@@ -4,4 +4,10 @@ const calculateProgress = (progressBar) => {
   progressBar.style.width = percents
 }
 
-export default calculateProgress
+const init = () => {
+  const control = document.querySelector(".determinate")
+
+  if (control) calculateProgress(control)
+}
+
+export default { init }
